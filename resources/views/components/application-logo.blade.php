@@ -1,0 +1,1 @@
+<img src="{{ asset('images/myday.svg') }}" alt="" srcset="" id="mydayLogo">
