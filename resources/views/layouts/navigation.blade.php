@@ -11,9 +11,13 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="margin-right: 30px !important;">
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" style="margin:0 10px;">
                         {{ __('Dashboard') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('profile.edit')" :active="request()->routeIs('profile.edit')" style="margin:0 10px;">
+                        {{ __('Profile') }}
                     </x-nav-link>
                 </div>
             </div>

@@ -15,6 +15,7 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    <p>Heheheh</p>
                 </div>
             </div>
         </div>
