@@ -55,7 +55,10 @@ class GroupController extends Controller
         if ( $tasks == null ) {
             return back()->with('error', __('No tasks in this group'));
         }else {
-            dd($tasks);
+            return view('groups.show', [
+                'group' => $group,
+                'tasks' => $tasks,
+            ]);
         }
     }
 

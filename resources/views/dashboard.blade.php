@@ -4,6 +4,14 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <link rel="stylesheet" href="{{ asset('build/assets/styles.css') }}">
                 <div class="container">
+
+
+                    @if ( Session::has('success') )
+                    <div class="alert alert-success">{{ Session::get('success') }}</div>    
+                    @elseif ( Session::has('error') )
+                    <div class="alert alert-danger">{{ Session::get('error') }}</div>
+                    @endif
+
                     <div class="title-wrap-centre">
                         <h2>لائحة المهام</h2>
                     </div>
