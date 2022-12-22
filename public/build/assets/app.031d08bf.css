@@ -1,3 +1,7 @@
+* {
+    font-family: 'Cairo', sans-serif;
+    text-decoration: none !important;
+}
 *,
 :before,
 :after {
@@ -1957,7 +1961,7 @@ select {
 }
 
 nav#dashboardNav {
-    height: 80px !important;
+    height: 100px !important;
     margin-top: 20px !important;
 }
 
