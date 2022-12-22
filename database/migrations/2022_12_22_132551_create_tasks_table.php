@@ -15,6 +15,14 @@ return new class extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
+
+            $table->string('name', 250)->nullable();
+            $table->text('task')->default('نص المهمة');
+            $table->integer('repeats')->unsigned()->default(1);
+
+            $table->unsignedBigInteger('group_id');
+
+            $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade');
             $table->timestamps();
         });
     }
