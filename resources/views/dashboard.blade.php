@@ -11,10 +11,10 @@
 
                     <div class="w-row">
                         @foreach ($groups as $group)
-                            <div class="column w-col w-col-4">
+                            <div class="column w-col w-col-4 mb-3 mt-3">
                                 <div class="content-card">
-                                    <a href="" >
-                                        <img src="{{ $group->image }}" alt="" class="step-image">
+                                    <a href="{{ route('group.show', $group) }}" title="{{ $group->name }}" >
+                                        <img src="{{ asset('images/'.$group->image) }}" alt="" class="step-image" style="max-width: 120px">
                                         <div class="content-wrapper">
                                             <h5 class="text_green">{{ $group->name }}</h5>
                                         </div>

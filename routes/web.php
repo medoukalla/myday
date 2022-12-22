@@ -1,9 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\OrderController;
+use App\Http\Controllers\GroupController;
+use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,15 +20,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/*
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');*/
 
 route::get('dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
 
-Route::resource('products', ProductController::class);
-Route::resource('categories', CategoryController::class);
+Route::resource('task', TaskController::class);
+Route::resource('group', GroupController::class);
 Route::resource('orders', OrderController::class);
 
 

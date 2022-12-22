@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Task extends Model
 {
     use HasFactory;
+
+
+
+    static function get_group_active_tasks($group_id) {
+        $tasks = Task::where('group_id', $group_id);
+        if ( $tasks->count() == 0 ) {
+            return null;
+        }else {
+            return $tasks->orderBy('id', 'desc')->get();
+        }
+    }
 }

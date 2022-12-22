@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Group;
+use App\Models\Task;
 use Illuminate\Http\Request;
 
 class GroupController extends Controller
@@ -46,7 +47,16 @@ class GroupController extends Controller
      */
     public function show(Group $group)
     {
-        //
+        // get all tasks in specified group 
+        $group_id = $group->id;
+
+        $tasks = Task::get_group_active_tasks($group_id);
+
+        if ( $tasks == null ) {
+            return back()->with('error', __('No tasks in this group'));
+        }else {
+            dd($tasks);
+        }
     }
 
     /**
