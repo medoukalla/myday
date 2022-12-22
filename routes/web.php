@@ -21,9 +21,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/*
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');*/
+
+route::get('dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
 
 Route::resource('products', ProductController::class);
 Route::resource('categories', CategoryController::class);

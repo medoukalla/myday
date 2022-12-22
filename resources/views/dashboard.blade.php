@@ -8,34 +8,21 @@
                         <h2>لائحة المهام</h2>
                     </div>
 
-                    <div class="w-layout-grid works-grid pb-3">
-                        <div class="content-card"><img
-                                src="https://uploads-ssl.webflow.com/63a44bdc311ee6b658d091fc/63a44bdc311ee6df6cd09264_Step%2001.png"
-                                alt="" class="step-image">
-                            <div class="content-wrapper">
-                                <h5>Adapt your menu items</h5>
-                            </div>
-                        </div>
-                        <div class="line-column">
-                        </div>
-                        <div class="content-card"><img
-                                src="https://uploads-ssl.webflow.com/63a44bdc311ee6b658d091fc/63a44bdc311ee60a21d09267_Step%2002.png"
-                                alt="" class="step-image">
-                            <div class="content-wrapper">
-                                <h5>Accept online orders &amp; takeout</h5>
-                            </div>
-                        </div>
-                        <div class="line-column">
-                        </div>
-                        <div class="content-card"><img
-                                src="https://uploads-ssl.webflow.com/63a44bdc311ee6b658d091fc/63a44bdc311ee6fdf0d0926a_Step%2003.png"
-                                alt="" class="step-image">
-                            <div class="content-wrapper">
-                                <h5>Manage delivery or takeout</h5>
-                            </div>
-                        </div>
 
-                        
+                    <div class="w-row">
+                        @foreach ($groups as $group)
+                            <div class="column w-col w-col-4">
+                                <div class="content-card">
+                                    <a href="" >
+                                        <img src="{{ $group->image }}" alt="" class="step-image">
+                                        <div class="content-wrapper">
+                                            <h5 class="text_green">{{ $group->name }}</h5>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        @endforeach
+                      
                     </div>
 
                 </div>

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
 
             $table->string('name', 250)->nullable();
-            $table->text('task')->default('نص المهمة');
+            $table->text('task')->nullable();
             $table->integer('repeats')->unsigned()->default(1);
 
             $table->unsignedBigInteger('group_id');

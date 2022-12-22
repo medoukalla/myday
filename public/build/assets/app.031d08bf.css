@@ -1968,3 +1968,8 @@ nav#dashboardNav {
 a#AuthFormsLogo img {
     width: 150px !important;
 }
+
+
+.text_green {
+    color: #35b8be;
+}
