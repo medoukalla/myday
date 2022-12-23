@@ -36,7 +36,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     // Add task to finished tasks 
-    Route::get('task_finished', [TaskController::class, 'task_finished'])->name('task.finished');
+    Route::get('task_finished/{task}', [CompleteController::class, 'finished'])->name('task.finished');
 
 });
 

@@ -15,7 +15,7 @@
                         
                         <p class="text-center prevent-select" style="font-size:25px; font-family: 'Noto Kufi Arabic', sans-serif; ">{{ $task->task }}</p>
 
-                        <div dir="ltr" class="circle-singleline prevent-select counter-click" data-route="{{ route('group.show', $task->group) }}"><span id="counter" data-value='0' >0</span> <span ><small id="target" data-value="{{ $task->repeats }}">/{{ $task->repeats }}</small></span></div> 
+                        <div dir="ltr" class="circle-singleline prevent-select counter-click" data-route="{{ route('task.finished', $task) }}"><span id="counter" data-value='0' >0</span> <span ><small id="target" data-value="{{ $task->repeats }}">/{{ $task->repeats }}</small></span></div> 
                         
                     </div>
 
@@ -66,20 +66,26 @@
                     $("#task-done").delay(500).fadeIn(500);
 
                     // add this tasks into completed table 
+                    headers: {
+                        var csrf = $(this).data('csrf_content')
+                    }
                     $.ajax({
-                        type: "POST",
+                        type: "get",
                         url: route,
-                        data: { 
-                            task_id : $('div.counter-click').data('task_id')
-                         },
-                        success: success,
-                        dataType: dataType
+                        success: function(e){
+                            if ( e.status == 'success' ) {
+                                var delay = 3500; 
+                                console.log(e);
+                                setTimeout(function(){ window.location = e.redirect; }, delay);
+                            }else {
+                                var delay = 3500; 
+                                console.log(e);
+                                setTimeout(function(){ window.location = e.redirect; }, delay);
+                            }
+                        }
                     });
 
-                    // redirect back to group tasks 
-                    var delay = 3500; 
                     
-                    setTimeout(function(){ window.location = route; }, delay);
                 }
 
             });
