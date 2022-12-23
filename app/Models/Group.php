@@ -13,4 +13,14 @@ class Group extends Model
     static function get_active_groups() {
         return Group::where('active', true)->orderBy('id', 'asc')->get();
     }
+
+
+    /**
+     * Get all of the tasks for the Group
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function tasks() {
+        return $this->hasMany(Task::class);
+    }
 }

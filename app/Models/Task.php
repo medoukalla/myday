@@ -19,4 +19,16 @@ class Task extends Model
             return $tasks->orderBy('id', 'desc')->get();
         }
     }
+
+
+    /**
+     * Get the group that owns the Task
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function group() {
+        return $this->belongsTo(Group::class);
+    }
+
+
 }

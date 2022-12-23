@@ -47,17 +47,12 @@ class GroupController extends Controller
      */
     public function show(Group $group)
     {
-        // get all tasks in specified group 
-        $group_id = $group->id;
 
-        $tasks = Task::get_group_active_tasks($group_id);
-
-        if ( $tasks == null ) {
+        if ( $group->tasks->count() < 1 ) {
             return back()->with('error', __('No tasks in this group'));
         }else {
             return view('groups.show', [
-                'group' => $group,
-                'tasks' => $tasks,
+                'group' => $group
             ]);
         }
     }

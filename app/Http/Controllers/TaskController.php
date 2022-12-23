@@ -46,7 +46,10 @@ class TaskController extends Controller
      */
     public function show(Task $task)
     {
-        dd($task);
+        // get group 
+        return view('tasks.show', [
+            'task'  => $task,
+        ]);
     }
 
     /**
