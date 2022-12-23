@@ -1,9 +1,12 @@
 <x-app-layout>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic&display=swap" rel="stylesheet">
+
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
             <div class="col">
                 <div class="card h-100">
+
                     <div class="card-header card-header-divider">
                         <h4 class="fs-5 fw-bold card-title mb-0">{{ $group->name }}</h4>
                     </div>
@@ -14,7 +17,7 @@
 
                             <div class="flex-fill ps-4 overflow-hidden">
                                 <a href="{{ route('task.show', $task) }}">
-                                    <div class="fw-bold mb-0 text-truncate"><b>{{ $task->name }}</b></div>
+                                    <div class="fw-bold mb-0 text-truncate" ><p style="font-family: 'Noto Kufi Arabic', sans-serif; ">{{ $task->name }}</p></div>
                                     <div class="small text-dark mb-1">التكرار - {{ $task->repeats }}</div>
                                     <div class="progress progress-sm">
                                         <div style="width: 74%;" class="progress-bar bg-konkon"></div>

@@ -84,5 +84,7 @@
     "You're logged in!": "لقد قمت بتسجيل الدخول!",
     "Your email address is unverified.": "لم يتم التحقق من عنوان بريدك الإلكتروني.",
     "Welcome" : "مرحيا",
-    "No tasks in this group" : "لا توجد اي مهمات في هاته المجموعة"
+    "No tasks in this group" : "لا توجد اي مهمات في هاته المجموعة",
+    "Back to group" : "عودة الى المجموعة",
+    "Task is done" : "أحسنت لقد أتممت المهمة بنجاح"
 }
