@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CompleteController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\TaskController;
@@ -26,12 +27,17 @@ route::get('dashboard', [App\Http\Controllers\HomeController::class, 'index'])->
 Route::resource('task', TaskController::class);
 Route::resource('group', GroupController::class);
 Route::resource('orders', OrderController::class);
+Route::resource('complete', CompleteController::class);
 
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // Add task to finished tasks 
+    Route::get('task_finished', [TaskController::class, 'task_finished'])->name('task.finished');
+
 });
 
 require __DIR__.'/auth.php';

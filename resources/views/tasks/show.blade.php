@@ -64,6 +64,18 @@
                     // show the congrats div 
                     $("#task-done img").attr('src', $("#task-done img").data('src'));
                     $("#task-done").delay(500).fadeIn(500);
+
+                    // add this tasks into completed table 
+                    $.ajax({
+                        type: "POST",
+                        url: route,
+                        data: { 
+                            task_id : $('div.counter-click').data('task_id')
+                         },
+                        success: success,
+                        dataType: dataType
+                    });
+
                     // redirect back to group tasks 
                     var delay = 3500; 
                     

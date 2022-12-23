@@ -9,12 +9,12 @@ class CompleteController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        dd($request);
     }
 
     /**
@@ -35,7 +35,7 @@ class CompleteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
