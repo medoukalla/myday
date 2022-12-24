@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Group;
 use App\Models\Task;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class GroupController extends Controller
 {
@@ -36,7 +37,15 @@ class GroupController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $group = new Group();
+        $group->name = $request->input('name');
+        $group->slug = Str::slug($group->name);
+
+        if ( $group->save() ) {
+            return back()->with('success', __('Group created successfully'));
+        }else {
+            return back()->withInput()->with('error', __('Group not created! Please try again'));
+        }
     }
 
     /**

@@ -86,5 +86,10 @@
     "Welcome" : "مرحيا",
     "No tasks in this group" : "لا توجد اي مهمات في هاته المجموعة",
     "Back to group" : "عودة الى المجموعة",
-    "Task is done" : "أحسنت لقد أتممت المهمة بنجاح"
+    "Task is done" : "أحسنت لقد أتممت المهمة بنجاح",
+    "Create new group" : "إنشاء مجموعة جديدة",
+    "Close" : "إلغاء",
+    "Save" : "حفظ",
+    "Group created successfully" : "تم إنشاء المجموعة بنجاح",
+    "Group not created! Please try again" : "لم يتم إنشاء المجموعة, المرجو المحاولة مرة اخرى"
 }
