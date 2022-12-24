@@ -23,4 +23,11 @@ class Group extends Model
     public function tasks() {
         return $this->hasMany(Task::class);
     }
+
+    /**
+     * function to calculate the number of tasks user completed in specify group
+     */
+    public function complete() {
+        return $this->hasMany(Complete::class);
+    }
 }

@@ -35,6 +35,7 @@ class CompleteController extends Controller
             $newComplete = new Complete();
             $newComplete->task_id = $task->id;
             $newComplete->user_id = Auth::user()->id;
+            $newComplete->group_id = $task->group->id;
 
             if ($newComplete->save()) {
                 return response()->json([

@@ -6,7 +6,7 @@
             <div class="col">
                 <div class="card h-100" >
                     <div class="card-header pt-3 pb-3 card-header-divider">
-                        <h4 class="fs-5 fw-bold card-title mb-0">
+                        <h4 class="fs-5 fw-bold card-title mb-0 pt-1 pb-3">
                             <a href="{{ route('group.show', $task->group) }}" title="{{ __('Back to group') }}">{{ $task->group->name }}</a> - {{ $task->name }}</h4>
                     </div>
 

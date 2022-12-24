@@ -8,26 +8,45 @@
                 <div class="card h-100">
 
                     <div class="card-header card-header-divider">
-                        <h4 class="fs-5 fw-bold card-title mb-0">{{ $group->name }}</h4>
+                        <h4 class="fs-5 fw-bold card-title mb-0 pt-1 pb-3">{{ $group->name }}</h4>
                     </div>
                     <div class="list-group list-group-flush">
+
                         @foreach ($group->tasks as $task)
-                            
-                            <div class="list-group-item d-flex py-3 align-items-center">
-
-                                <div class="flex-fill ps-4 overflow-hidden">
-                                    <a href="{{ route('task.show', $task) }}" style=" position: relative; ">
-                                        <div class="fw-bold mb-0 text-truncate" ><p style="font-family: 'Noto Kufi Arabic', sans-serif; ">{{ $task->name }}</p></div>
-                                        <div class="small text-dark mb-1">التكرار - {{ $task->repeats }}</div>
-                                        
-                                        <div class="left" style=" position: absolute; left: -20px; top: 0px; width: 50px; height: 50px; " >
-                                            <img style=" border: 2px solid #56d9ba8c; border-radius: 25%; padding: 5px; "  src="{{ asset('images/finished.gif') }}" alt="">
-                                        </div>
-                                    </a>
+                            @if ( $task->complete == NULL )
+                                <div class="list-group-item d-flex py-3 align-items-center">
+                                    <div class="flex-fill ps-4 overflow-hidden">
+                                        <a href="{{ route('task.show', $task) }}" style=" position: relative; ">
+                                            <div class="fw-bold mb-0 text-truncate" >
+                                                <p style="font-family: 'Noto Kufi Arabic', sans-serif; ">{{ $task->name }}</p>
+                                            </div>
+                                            <div class="small text-dark mb-1">التكرار - {{ $task->repeats }}</div>
+                                            <div class="left" style=" position: absolute; left: -20px; top: 0px; width: 50px; height: 50px; " >
+                                                <img style=" border: 2px solid #eeca66; border-radius: 25%; padding: 5px; "  src="{{ asset('images/waiting.gif') }}" alt="">
+                                            </div>
+                                        </a>
+                                    </div>  
                                 </div>
+                            @endif
+                        @endforeach
 
-                            </div>
 
+                        @foreach ($group->tasks as $task)
+                            @if ( $task->complete != NULL )
+                                <div class="list-group-item d-flex py-3 align-items-center">
+                                    <div class="flex-fill ps-4 overflow-hidden">
+                                        <a style=" position: relative; cursor: default;">
+                                            <div class="fw-bold mb-0 text-truncate" >
+                                                <p style="font-family: 'Noto Kufi Arabic', sans-serif; ">{{ $task->name }}</p>
+                                            </div>
+                                            <div class="small text-dark mb-1">التكرار - {{ $task->repeats }}</div>
+                                            <div class="left" style=" position: absolute; left: -20px; top: 0px; width: 50px; height: 50px; " >
+                                                <img style=" border: 2px solid #56d9ba8c; border-radius: 25%; padding: 5px; "  src="{{ asset('images/finished.gif') }}" alt="">
+                                            </div>
+                                        </a>
+                                    </div>
+                               </div>
+                            @endif
                         @endforeach
 
                         

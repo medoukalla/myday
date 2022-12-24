@@ -31,4 +31,15 @@ class Task extends Model
     }
 
 
+
+    /**
+     * Get the group that owns the Task
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function complete() {
+        return $this->hasOne(Complete::class);
+    }
+
+
 }
