@@ -22,7 +22,6 @@
                     <div class="list-group text-center list-group-flush p-4" id="task-done" style="display: none;">
                         <img data-src="{{ asset('images/congrats.gif') }}" src="" style=" width: 200px; margin: 20px auto; " alt="">
                         <h5 style=" color: #4ebf9c; ">{{ __('Task is done') }}</h5>
-
                     </div>
 
                 </div>
@@ -73,15 +72,8 @@
                         type: "get",
                         url: route,
                         success: function(e){
-                            if ( e.status == 'success' ) {
-                                var delay = 3500; 
-                                console.log(e);
-                                setTimeout(function(){ window.location = e.redirect; }, delay);
-                            }else {
-                                var delay = 3500; 
-                                console.log(e);
-                                setTimeout(function(){ window.location = e.redirect; }, delay);
-                            }
+                            var delay = 3000; 
+                            setTimeout(function(){ window.location = e.redirect; }, delay);
                         }
                     });
 
