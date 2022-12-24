@@ -91,5 +91,9 @@
     "Close" : "إلغاء",
     "Save" : "حفظ",
     "Group created successfully" : "تم إنشاء المجموعة بنجاح",
-    "Group not created! Please try again" : "لم يتم إنشاء المجموعة, المرجو المحاولة مرة اخرى"
+    "Group not created! Please try again" : "لم يتم إنشاء المجموعة, المرجو المحاولة مرة اخرى",
+    "Create new task" : "إضافة مهمة جديدة",
+    "Task created successfully" : "تمت إضافة المهمة بنجاح",
+    "Task not created! Please try again" : "لم يتم إضافة المهمة, المرجو المحاولة مرة اخرى",
+    "Back to groups page" : "عودة إلى صفحة المجموعات"
 }

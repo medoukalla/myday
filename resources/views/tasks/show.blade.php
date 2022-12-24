@@ -11,7 +11,6 @@
                     </div>
 
                     <div class="list-group list-group-flush p-4" id="task-content">
-
                         
                         <p class="text-center prevent-select" style="font-size:25px; font-family: 'Noto Kufi Arabic', sans-serif; ">{{ $task->task }}</p>
 

@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Auth;
 
 class Task extends Model
 {
@@ -38,7 +40,7 @@ class Task extends Model
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function complete() {
-        return $this->hasOne(Complete::class);
+        return $this->hasOne(Complete::class)->whereDay('created_at', Carbon::today())->where('user_id', Auth::user()->id);
     }
 
 

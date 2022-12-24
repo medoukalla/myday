@@ -35,7 +35,18 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $task = new Task();
+        $task->name = $request->input('name');
+        $task->task = $request->input('task');
+        $task->repeats = $request->input('repeats');
+        $task->group_id = $request->input('group_id');
+
+        if ( $task->save() ) {
+            return back()->with('success', __('Task created successfully'));
+        }else {
+            return back()->withInput()->with('error', __('Task not created! Please try again'));
+        }
     }
 
     /**

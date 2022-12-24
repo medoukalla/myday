@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Group;
 use App\Models\Task;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -56,14 +57,9 @@ class GroupController extends Controller
      */
     public function show(Group $group)
     {
-
-        if ( $group->tasks->count() < 1 ) {
-            return back()->with('error', __('No tasks in this group'));
-        }else {
-            return view('groups.show', [
-                'group' => $group
-            ]);
-        }
+        return view('groups.show', [
+            'group' => $group
+        ]);
     }
 
     /**
