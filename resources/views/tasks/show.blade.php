@@ -3,6 +3,9 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
+            <a class="btn btn-outline-dark btn-sm mb-4 mt-0" href="{{ route('group.show', $task->group->id) }}">{{ __('Back to group') }}</a>
+
+
             <div class="col">
                 <div class="card h-100" >
                     <div class="card-header pt-3 pb-3 card-header-divider">

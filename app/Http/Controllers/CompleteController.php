@@ -6,6 +6,7 @@ use App\Models\Complete;
 use App\Models\Task;
 use Illuminate\Http\Request;
 use Auth;
+use Carbon\Carbon;
 
 class CompleteController extends Controller
 {
@@ -28,7 +29,7 @@ class CompleteController extends Controller
     public function finished(Task $task)
     {
         // check if task exists in complete tasks for today or not 
-        $check = Complete::where('task_id', $task->id)->where('user_id', Auth::user()->id)->count();
+        $check = Complete::where('task_id', $task->id)->where('user_id', Auth::user()->id)->whereDay('created_at', Carbon::today())->count();
 
         // if check == 0 ( Means task not done today yet )
         if ( $check == 0 ) {
