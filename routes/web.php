@@ -28,6 +28,7 @@ Route::resource('task', TaskController::class);
 Route::resource('group', GroupController::class);
 Route::resource('orders', OrderController::class);
 Route::resource('complete', CompleteController::class);
+Route::resource('user', UserController::class);
 
 
 Route::middleware('auth')->group(function () {

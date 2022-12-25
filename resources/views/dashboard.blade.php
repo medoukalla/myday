@@ -2,9 +2,21 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <link rel="stylesheet" href="{{ asset('build/assets/styles.css') }}">
+                
                 <div class="container">
 
+
+                    <div class="w-row" dir="ltr">
+                        <div class="dropdown">
+                            <button class="btn btn-outline-secondary dropdown-toggle mt-3 ml-3 " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              {{ __('Quick access') }}
+                            </button>
+                            <ul class="dropdown-menu " >
+                              <li><a class="dropdown-item mb-2 mt-1" dir="rtl" href="{{ route('user.index') }}">{{ __('Users') }}</a></li>
+                              <li><a class="dropdown-item mb-2 mt-1" dir="rtl" href="{{ route('dashboard') }}">{{ __('Groups') }}</a></li>
+                            </ul>
+                          </div>
+                    </div>
 
                     @if ( Session::has('success') )
                     <div class="alert alert-success">{{ Session::get('success') }}</div>    
@@ -13,8 +25,8 @@
                     @endif
 
                     <div class="title-wrap-centre pt-3">
-                        <h4>لائحة المجموعات</h4>
-                        <p>التغييرات الصغيرة المستمرة = إنجازات كبيرة</p>
+                        <h4>{{ __('List of groups') }}</h4>
+                        <p>{{ __('Small changes = big achievements') }}</p>
                     </div>
 
 
@@ -25,9 +37,9 @@
                                     <thead class="table-primary">
                                         <tr>
                                             <th>#</th>
-                                            <th>المجموعة</th>
-                                            <th>المهام / المنجزة</th>
-                                            <th>الحالة</th>
+                                            <th>{{ __('Groups') }}</th>
+                                            <th>{{ ('Tasks / Acheived') }}</th>
+                                            <th>{{ __('Status') }}</th>
                                         </tr>
                                     </thead>
                                     <tbody>

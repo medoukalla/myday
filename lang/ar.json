@@ -95,5 +95,12 @@
     "Create new task" : "إضافة مهمة جديدة",
     "Task created successfully" : "تمت إضافة المهمة بنجاح",
     "Task not created! Please try again" : "لم يتم إضافة المهمة, المرجو المحاولة مرة اخرى",
-    "Back to groups page" : "عودة إلى صفحة المجموعات"
+    "Back to groups page" : "عودة إلى صفحة المجموعات",
+    "List of groups" : "لائحة المجموعات",
+    "Small changes = big achievements" : "التغييرات الصغيرة المستمرة = إنجازات كبيرة",
+    "Groups" : "المجموعات",
+    "Tasks / Acheived" : "المهام / المنجزة",
+    "Status" : "الحالة",
+    "Quick access" : "الوصول السريع",
+    "Users" : "المستخدمين"
 }
