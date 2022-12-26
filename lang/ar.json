@@ -104,5 +104,10 @@
     "Users" : "المستخدمين",
     "User name" : "إسم المستخدم",
     "Completed (today)" : "أنجز (اليوم)",
-    "List of users" : "لائحة المستخدمين"
+    "List of users" : "لائحة المستخدمين",
+    "Title" : "عنوان",
+    "Repeats" : "التكرار",
+    "Group" : "المجموعة",
+    "Time" : "الوقت",
+    "List of completed tasks today" : "قائمة المهام التي تم تحقيقها اليوم"
 }

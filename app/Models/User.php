@@ -58,7 +58,7 @@ class User extends Authenticatable
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function complete() {
-        return $this->hasMany(Complete::class)->whereDay('created_at', Carbon::today());
+        return $this->hasMany(Complete::class)->whereDay('created_at', Carbon::today())->orderBy('created_at', 'desc');
     }
 
 }

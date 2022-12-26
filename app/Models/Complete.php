@@ -28,4 +28,24 @@ class Complete extends Model
         
     }
 
+
+
+    /**
+     * Get the group that owns the Complete
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function group() {
+        return $this->belongsTo(Group::class);
+    }
+
+    /**
+     * Get the task related to this record
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function task() {
+        return $this->belongsTo(Task::class);
+    }
+
 }

@@ -25,8 +25,8 @@
                     @endif
 
                     <div class="title-wrap-centre pt-3">
-                        <h4>{{ __('List of users') }}</h4>
-                        <p>{{ __('Small changes = big achievements') }}</p>
+                        <h4>{{ $user->name }}</h4>
+                        <p>{{ __('List of completed tasks today') }}</p>
                     </div>
 
 
@@ -36,30 +36,23 @@
                                 <table class="table  table-bordered table-striped">
                                     <thead class="table-primary">
                                         <tr>
-                                            <th>#</th>
-                                            <th>{{ __('User name') }}</th>
-                                            <th>{{ __('Completed (today)') }}</th>
-                                            <th>{{ __('Showing') }}</th>
+                                            <th>{{ __('Title') }}</th>
+                                            <th>{{ __('Repeats') }}</th>
+                                            <th>{{ __('Group') }}</th>
+                                            <th>{{ __('Time') }}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
 
-                                        @foreach ($users as $user)
+                                        @foreach ($user->complete as $complete)
 
-                                            
                                             <tr style="font-size: 18px; line-height: 40px;">
-                                                <td >{{ $user->id }}</td>
-                                                <td>
-                                                    <a class="text-dark" href="">
-                                                        {{ $user->name }}
-                                                    </a>
-                                                </td>
-                                                <td>{{ count($user->complete) }}</td>
+                                                <td >{{ $complete->task->name }}</td>
+                                                <td>{{ $complete->task->repeats }}</td>
+                                                <td>{{ $complete->group->name }}</td>
 
                                                 <td>
-                                                    <a href="{{ route('user.show', $user) }}">
-                                                        <img src="{{ asset('images/eye.gif') }}" alt="" width="45px" height="45px">
-                                                    </a>
+                                                    {{ $complete->created_at->diffForHumans() }}
                                                 </td>
                                                 
                                             </tr>
@@ -80,3 +73,21 @@
         </div>
     </div>
 </x-app-layout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
