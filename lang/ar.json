@@ -89,7 +89,6 @@
     "Task is done" : "أحسنت لقد أتممت المهمة بنجاح",
     "Create new group" : "إنشاء مجموعة جديدة",
     "Close" : "إلغاء",
-    "Save" : "حفظ",
     "Group created successfully" : "تم إنشاء المجموعة بنجاح",
     "Group not created! Please try again" : "لم يتم إنشاء المجموعة, المرجو المحاولة مرة اخرى",
     "Create new task" : "إضافة مهمة جديدة",
@@ -102,5 +101,8 @@
     "Tasks / Acheived" : "المهام / المنجزة",
     "Status" : "الحالة",
     "Quick access" : "الوصول السريع",
-    "Users" : "المستخدمين"
+    "Users" : "المستخدمين",
+    "User name" : "إسم المستخدم",
+    "Completed (today)" : "أنجز (اليوم)",
+    "List of users" : "لائحة المستخدمين"
 }

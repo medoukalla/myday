@@ -38,7 +38,7 @@
                                         <tr>
                                             <th>#</th>
                                             <th>{{ __('Groups') }}</th>
-                                            <th>{{ ('Tasks / Acheived') }}</th>
+                                            <th>{{ __('Tasks / Acheived') }}</th>
                                             <th>{{ __('Status') }}</th>
                                         </tr>
                                     </thead>
