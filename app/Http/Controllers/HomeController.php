@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         return view('dashboard',[
-            'groups' => Group::get_active_groups(),
+            //'groups' => Group::get_active_groups(),
         ]);
     }
 
